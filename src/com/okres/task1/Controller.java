@@ -11,7 +11,6 @@ public class Controller {
         this.view = view;
     }
 
-
     public void workWithUser() {
         Scanner scanner = new Scanner(System.in);
         view.printMessageToUser(View.GREETING);
