@@ -16,4 +16,16 @@ public class View {
     public void wrongInput() {
         System.err.println("Wrong input, program support only numeric input");
     }
+
+    public void printResult(String res) {
+        if (res.equals(Controller.BIGGER))
+            System.out.println("Your number is bigger than my");
+        else if (res.equals(Controller.SMALLER))
+            System.out.println("Your number is smaller than my");
+        else if (res.equals(Controller.WIN))
+            System.out.println("My congratulations? you are WIN!!!");
+    }
+
+    public void congratulatUser() {
+    }
 }
