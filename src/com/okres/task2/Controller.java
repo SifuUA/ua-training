@@ -5,6 +5,10 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 public class Controller {
+
+    public static final int MIN_RANGE_VALUE = 0;
+    public static final int MAX_RANGE_VALUE = 1;
+
     private Model model;
     private View view;
 
@@ -16,9 +20,9 @@ public class Controller {
 
     public void gamePreparation() {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
-        view.userGreeting();
         model.setCurrentRange(new int[]{0, 100});
         model.setNumber((int) (Math.random() * 100));
+        view.userGreeting();
         gameRunner(br);
     }
 
@@ -28,11 +32,35 @@ public class Controller {
         try {
             while ((tmp = br.readLine()) != null) {
                 view.showCurrentRange(model.getCurrentRange());
+                if (checkData(tmp)) {
 
-                
+                }
+
             }
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    private boolean checkData(String tmp) {
+        int i;
+
+        if (isNumber(tmp)) {
+            i = Integer.parseInt(tmp);
+            if (i > model.getCurrentRange()[MIN_RANGE_VALUE] && i < model.getCurrentRange()[MAX_RANGE_VALUE]) {
+
+            }
+
+        }
+    }
+
+    private boolean isNumber(String str) {
+        try {
+            int i = Integer.parseInt(str);
+        } catch (Exception) {
+            view.wrongInput();
+            return false;
+        }
+        return true;
     }
 }
