@@ -36,9 +36,10 @@ public class Controller {
 
         try {
             while ((tmp = br.readLine()) != null) {
+                if (model.getPreviousAnswers().size() > 0)
+                    view.showAllAttempts(model.getPreviousAnswers());
                 view.showCurrentRange(model.getCurrentRange());
                 workWithData(tmp);
-                view.showAllAttempts(model.getPreviousAnswers());
             }
 
         } catch (IOException e) {
@@ -53,12 +54,14 @@ public class Controller {
         if (isNumber(tmp)) {
             i = Integer.parseInt(tmp);
             if (i > model.getCurrentRange()[MIN_RANGE_VALUE] && i < model.getCurrentRange()[MAX_RANGE_VALUE]) {
-                if (i > model.getNumber())
-                    view.printResult(BIGGER);
-                else if (i < model.getNumber())
-                    view.printResult(SMALLER);
-                else {
-                    view.printResult(WIN);
+                if (i > model.getNumber()) {
+                    view.printResult(BIGGER, model.getPreviousAnswers().size());
+                    model.getCurrentRange()[MAX_RANGE_VALUE] = i;
+                } else if (i < model.getNumber()) {
+                    view.printResult(SMALLER, model.getPreviousAnswers().size());
+                    model.getCurrentRange()[MIN_RANGE_VALUE] = i;
+                } else {
+                    view.printResult(WIN, model.getPreviousAnswers().size());
                     System.exit(1);
                 }
                 model.getPreviousAnswers().add(i);
