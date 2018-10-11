@@ -1,5 +1,7 @@
 package com.okres.task2;
 
+import java.util.List;
+
 public class View {
     public static final String HI = "Welcome to the Game, number which you must guess is generate ...";
 
@@ -23,9 +25,13 @@ public class View {
         else if (res.equals(Controller.SMALLER))
             System.out.println("Your number is smaller than my");
         else if (res.equals(Controller.WIN))
-            System.out.println("My congratulations? you are WIN!!!");
+            System.out.println("My congratulations! You are WIN!!!");
     }
 
-    public void congratulatUser() {
+    public void showAllAttempts(List<Integer> previousAnswers) {
+        for (Integer e : previousAnswers) {
+            System.out.print("Your previous attempts: " + e + " ");
+        }
+        System.out.println();
     }
 }

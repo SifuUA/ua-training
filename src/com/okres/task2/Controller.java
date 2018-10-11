@@ -3,6 +3,7 @@ package com.okres.task2;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.ArrayList;
 
 public class Controller {
 
@@ -25,6 +26,7 @@ public class Controller {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         model.setCurrentRange(new int[]{0, 100});
         model.setNumber((int) (Math.random() * 100));
+        model.setPreviousAnswers(new ArrayList<>());
         view.userGreeting();
         gameRunner(br);
     }
@@ -35,17 +37,17 @@ public class Controller {
         try {
             while ((tmp = br.readLine()) != null) {
                 view.showCurrentRange(model.getCurrentRange());
-                if (checkData(tmp)) {
-
-                }
-
+                workWithData(tmp);
+                view.showAllAttempts(model.getPreviousAnswers());
             }
+
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
-    private boolean checkData(String tmp) {
+    private void workWithData(String tmp) {
         int i;
 
         if (isNumber(tmp)) {
@@ -55,9 +57,11 @@ public class Controller {
                     view.printResult(BIGGER);
                 else if (i < model.getNumber())
                     view.printResult(SMALLER);
-                else
+                else {
                     view.printResult(WIN);
-
+                    System.exit(1);
+                }
+                model.getPreviousAnswers().add(i);
             }
         }
     }
@@ -65,7 +69,7 @@ public class Controller {
     private boolean isNumber(String str) {
         try {
             int i = Integer.parseInt(str);
-        } catch (Exception) {
+        } catch (Exception e) {
             view.wrongInput();
             return false;
         }
