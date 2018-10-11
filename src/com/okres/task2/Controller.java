@@ -36,16 +36,16 @@ public class Controller {
 
         try {
             while ((tmp = br.readLine()) != null) {
-                if (model.getPreviousAnswers().size() > 0)
-                    view.showAllAttempts(model.getPreviousAnswers());
-                view.showCurrentRange(model.getCurrentRange());
                 workWithData(tmp);
+                if (model.getPreviousAnswers().size() > 0) {
+                    view.showAllAttempts(model.getPreviousAnswers());
+                }
+                view.showCurrentRange(model.getCurrentRange());
             }
 
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     private void workWithData(String tmp) {
