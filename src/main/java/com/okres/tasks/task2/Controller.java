@@ -26,7 +26,7 @@ public class Controller {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         model.setCurrentRange(new int[]{0, 100});
         model.setNumber((int) (Math.random() * 100));
-        model.setPreviousAnswers(new ArrayList<>());
+        model.setPreviousAnswers(new ArrayList<Integer>());
         view.userGreeting();
         gameRunner(br);
     }
