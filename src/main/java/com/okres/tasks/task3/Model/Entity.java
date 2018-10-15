@@ -1,5 +1,9 @@
 package com.okres.tasks.task3.Model;
 
+import java.lang.reflect.Field;
+import java.util.HashMap;
+import java.util.Map;
+
 public class Entity {
     private String secondName;
     private String firstName;
@@ -10,6 +14,9 @@ public class Entity {
     private int mobilePhone;
     private String email;
     private String skype;
+
+    public Entity() {
+    }
 
     public Entity(String secondName, String firstName, String patronymic, String nickname, String comment,
                   int homePhone, int mobilePhone, String email, String skype) {
@@ -23,6 +30,7 @@ public class Entity {
         this.email = email;
         this.skype = skype;
     }
+
 
     public String getSecondName() {
         return secondName;
@@ -94,6 +102,20 @@ public class Entity {
 
     public void setSkype(String skype) {
         this.skype = skype;
+    }
+
+    public Field[] getColumnCount() {
+        return getClass().getDeclaredFields();
+    }
+
+    public HashMap<Integer, String> getAllFields() {
+        /*Map<Integer, String> map = new HashMap<>();
+        int len = getColumnCount();
+
+        for (int i = 0; i < len; i++) {
+            map.put(i, "")
+        }*/
+        return null;
     }
 
     @Override
