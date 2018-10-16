@@ -1,4 +1,4 @@
-package com.okres.tasks.task3.Model;
+package java.com.okres.tasks.task3.Model;
 
 import com.okres.tasks.task3.Util.RegularExpressions;
 

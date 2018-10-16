@@ -1,4 +1,4 @@
-package com.okres.tasks.task2;
+package java.com.okres.tasks.task2;
 
 import java.util.List;
 

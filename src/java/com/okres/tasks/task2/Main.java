@@ -1,6 +1,4 @@
-package com.okres.tasks.task2;
-
-import com.okres.tasks.task3.Model.Entity;
+package java.com.okres.tasks.task2;
 
 public class Main {
     public static void main(String[] args) {

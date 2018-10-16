@@ -1,4 +1,4 @@
-package com.okres.tasks.task3.Util;
+package java.com.okres.tasks.task3.Util;
 
 public enum SubscriberGroups {
 

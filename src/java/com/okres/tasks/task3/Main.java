@@ -1,9 +1,9 @@
-package com.okres.tasks.task3;
+package java.com.okres.tasks.task3;
 
-import com.okres.tasks.task3.Controller.Controller;
-import com.okres.tasks.task3.Model.Entity;
-import com.okres.tasks.task3.Model.Model;
-import com.okres.tasks.task3.View.View;
+import java.com.okres.tasks.task3.Controller.Controller;
+import java.com.okres.tasks.task3.Model.Entity;
+import java.com.okres.tasks.task3.Model.Model;
+import java.com.okres.tasks.task3.View.View;
 
 public class Main {
 
