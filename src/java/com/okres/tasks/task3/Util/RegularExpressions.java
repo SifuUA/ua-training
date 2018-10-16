@@ -1,5 +1,8 @@
 package java.com.okres.tasks.task3.Util;
 
 public interface RegularExpressions {
-    String FIRST_NAME = "";
+    //en
+    String FIRST_NAME_EN = "^[A-Z][a-z]{1, 20}$";
+
+    String FIRST_NAME_UKR = "^[А-ЩЬЮЯҐІЇЄ][а-щьюяґіїє]{1,20}$";
 }
