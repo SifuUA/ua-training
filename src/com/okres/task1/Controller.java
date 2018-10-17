@@ -1,4 +1,4 @@
-package java.com.okres.tasks.task1;
+package com.okres.task1;
 
 import java.util.Scanner;
 

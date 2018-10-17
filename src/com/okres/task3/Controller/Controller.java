@@ -1,8 +1,7 @@
-package java.com.okres.tasks.task3.Controller;
+package com.okres.task3.Controller;
 
-import java.com.okres.tasks.task3.Model.Entity;
-import java.com.okres.tasks.task3.Model.Model;
-import java.com.okres.tasks.task3.View.View;
+import com.okres.task3.Model.Entity;
+import com.okres.task3.View.View;
 
 import java.util.Scanner;
 
@@ -17,7 +16,7 @@ public class Controller {
 
     public void startGame() {
         Scanner sc = new Scanner(System.in);
-       InputNoteToNoteBook ip = new InputNoteToNoteBook(view, sc);
-       ip.insertNote();
+        InputNoteToNoteBook ip = new InputNoteToNoteBook(view, sc);
+        ip.insertNote();
     }
 }

@@ -1,11 +1,11 @@
-package java.com.okres.tasks.task3.Controller;
+package com.okres.task3.Controller;
 
-import java.com.okres.tasks.task3.Model.Entity;
-import java.com.okres.tasks.task3.View.View;
+import com.okres.task3.Model.Entity;
+import com.okres.task3.View.View;
+
 import java.util.Scanner;
 
-import static java.com.okres.tasks.task3.Controller.RegularExpressions.FIRST_NAME_EN;
-import static java.com.okres.tasks.task3.Controller.RegularExpressions.FIRST_NAME_UKR;
+import static com.okres.task3.View.ConstantToResourceBundle.FIRST_NAME;
 
 public class InputNoteToNoteBook {
 
@@ -22,7 +22,8 @@ public class InputNoteToNoteBook {
     public void insertNote() {
         UtilityController uc = new UtilityController(view, sc);
         String str = String.valueOf(View.bundle.getLocale()).equals("ua")
-                ? FIRST_NAME_UKR : FIRST_NAME_EN;
-        entity.setFirstName(str);
+                ? RegularExpressions.FIRST_NAME_UKR : RegularExpressions.FIRST_NAME_EN;
+
+        this.entity.setFirstName(uc.inputStringValue(FIRST_NAME, str));
     }
 }

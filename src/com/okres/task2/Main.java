@@ -1,4 +1,4 @@
-package java.com.okres.tasks.task2;
+package com.okres.task2;
 
 public class Main {
     public static void main(String[] args) {

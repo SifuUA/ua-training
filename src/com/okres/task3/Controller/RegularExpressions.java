@@ -1,4 +1,4 @@
-package java.com.okres.tasks.task3.Controller;
+package com.okres.task3.Controller;
 
 public interface RegularExpressions {
     //en

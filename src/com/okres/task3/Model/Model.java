@@ -1,4 +1,4 @@
-package java.com.okres.tasks.task3.Model;
+package com.okres.task3.Model;
 
 
 public class Model {
