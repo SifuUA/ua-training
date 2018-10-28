@@ -1,5 +1,9 @@
 package com.okres.task3.View;
 
+import com.okres.task3.Controller.InputNote;
+import com.okres.task3.Controller.UtilityController;
+
+import java.nio.charset.StandardCharsets;
 import java.util.Locale;
 import java.util.ResourceBundle;
 
@@ -19,12 +23,15 @@ public class View {
     }
 
     public void printMessage(String str) {
-        System.out.println(str);
+        if (InputNote.flag == 1)
+            System.out.println(new String(str.getBytes(StandardCharsets.ISO_8859_1), StandardCharsets.UTF_8));
+        else
+            System.out.println(str);
     }
 
-    private String concatString(String ... str) {
+    private String concatString(String... str) {
         StringBuilder sb = new StringBuilder();
-        for(String s : str) {
+        for (String s : str) {
             sb.append(s);
         }
         return new String(sb);

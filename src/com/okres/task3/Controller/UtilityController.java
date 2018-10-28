@@ -17,7 +17,7 @@ public class UtilityController {
     }
 
     public String inputString(String message, String regex) {
-        String res;
+        String res = null;
 
         view.pringStringInput(message);
         while (scanner.hasNext()) {
@@ -27,6 +27,6 @@ public class UtilityController {
             else
                 view.printWrongInput(message);
         }
-        return null;
+        return res;
     }
 }
