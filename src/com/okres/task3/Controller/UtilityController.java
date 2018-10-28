@@ -4,24 +4,29 @@ import com.okres.task3.View.View;
 
 import java.util.Scanner;
 
-import static com.okres.task3.View.ConstantToResourceBundle.WRONG_INPUT;
+import static com.okres.task3.View.TextInfo.WRONG_INPUT;
 
 public class UtilityController {
 
-   private View view;
-   private Scanner sc;
+    private Scanner scanner;
+    private View view;
 
-    public UtilityController(View view, Scanner sc) {
+    public UtilityController(Scanner scanner, View view) {
+        this.scanner = scanner;
         this.view = view;
-        this.sc = sc;
     }
 
-    public String inputStringValue(String firstName, String regex) {
+    public String inputString(String message, String regex) {
         String res;
-        view.printBondleMessage(firstName);
-        while (!(sc.hasNext() && (res = sc.next()).matches(regex))) {
-            view.printMessage(WRONG_INPUT);
+
+        view.pringStringInput(message);
+        while (scanner.hasNext()) {
+            res = scanner.next();
+            if (res.matches(regex))
+                break;
+            else
+                view.printWrongInput(message);
         }
-        return res;
+        return null;
     }
 }
