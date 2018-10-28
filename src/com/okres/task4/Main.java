@@ -10,27 +10,27 @@ public class Main {
     public static void main(String[] args) {
 
         List<Integer> list = Arrays.asList(4, 5, -6, 4, 5, 3, 4, 2, 4, 5, 7);
-
-        TreeMap<Integer, Integer> map = new TreeMap<>();
+        Map<Integer, Integer> map = new TreeMap<>();
 
         for (Integer i : list) {
-            int res = 1;
-            if (!(map.containsKey(i))) {
-                map.put(i, res);
-            } else {
+            if (!(map.containsKey(i)))
+                map.put(i, 1);
+            else
                 countNum(map, i);
-            }
         }
-        System.out.println(map.toString());
+        print(map);
     }
 
-    private static int countNum(TreeMap<Integer, Integer> map, int value) {
-        int res = 0;
+    private static void countNum(Map<Integer, Integer> map, int value) {
         for (Map.Entry<Integer, Integer> i : map.entrySet()) {
             if (i.getKey().equals(value))
                 i.setValue(i.getValue() + 1);
         }
-        return res;
     }
 
+    private static void print(Map<Integer, Integer> map) {
+        for (Map.Entry<Integer, Integer> i : map.entrySet()) {
+            System.out.println(i.getKey() + " - " + i.getValue());
+        }
+    }
 }
