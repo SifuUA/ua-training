@@ -14,6 +14,9 @@ public class Main {
         return n + sum(n - 1);*/
 
     Switcher switcher = new Switcher();
+    Lamp lamp = new Lamp();
+
+    switcher.electricityConsumer = lamp;
     switcher.switchOn();
     }
 }
